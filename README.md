@@ -104,8 +104,7 @@ public class EmployeeFactory : IFactory<Employee>...
   }
   
   // Mediator to hold a State
-  public class NamesMediator : IMediator<Ilist<string>>
-  {
+  public class NamesMediator : IMediator<Ilist<string>>...
     private IList<string> _names;
   
     public IList<string> GetState()
