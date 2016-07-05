@@ -1,0 +1,19 @@
+using System;
+
+namespace company.domain
+{
+  public class NamesMediator : IMediator<IList<string>>
+  {
+    public IList<string> _list;
+    
+    public IList<string> GetState()
+    {
+      return this._list;
+    }
+    
+    public void SetState(IList<string> list)
+    {
+      this._list = list;
+    }
+  }
+}
