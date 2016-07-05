@@ -5,7 +5,7 @@ In a previous project, I used this pattern to exchange data between objects in a
 
 Check out the following classes:
 
-```
+```cs
 // Client Start Class
 public class Client...
   private IFactory<Employee> _factory;
@@ -39,7 +39,7 @@ public class Employee...
 
 I would like the share the list of names (Paul & Jacob) so only if the names occur in the list, the ```Employee``` object is created. I could expand the ```IFactory<Employee>``` interface with a sort of ```Invoke()``` method.
 
-```
+```cs
 // Client Start Class
 public class Client...
   private IFactory<Employee> _factory;
@@ -77,7 +77,7 @@ The Factory should be responsible to create objects. That should be the ONLY res
 
 The Mediator Pattern.
 
-```
+```cs
 // Client Start Class
 public class Client...
   private IMediator<IList<string> _mediator;
@@ -124,7 +124,7 @@ In this example, the power of the Mediator Pattern isn't maybe that big. But ima
 
 The Mediator Pattern allows you to share this state over multiple items: all who needs the state just takes the dependency of the Mediator with the right kind of state:
 
-```
+```cs
 public class EmployeeFactory : IFactory<Employee>...
   private IMediator<IList<string>> _mediator;
   
