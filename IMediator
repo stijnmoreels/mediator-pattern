@@ -1,0 +1,10 @@
+using System;
+
+namespace company.Infrastructure
+{
+  public interface IMediator<T>
+  {
+    T GetState();
+    SetState(T state);
+  }
+}
