@@ -1,0 +1,25 @@
+using System;
+
+namespace company.application
+{
+  public class Client
+  {
+    private IMediator<IList<string>> _mediator;
+    private IFactory<Employee> _factory;
+  
+    public Client(
+      IMediator<IList<string>> mediator,
+      IFactory<Employee> factory)
+    {
+      this._mediator = mediator;
+      this._factory = factory;
+    }
+  
+    public void Main()
+    {
+      IList<string> names = new List<string() { "Paul", "Jacob" };
+      this._mediator.SetState(names);
+      Employee paul = this._factory.Create("Paul");
+    }
+  }
+}
