@@ -1,7 +1,7 @@
 # Mediator Pattern
-The Mediator Pattern is used to handle complex communication between objects. This way the data exchange is decoupled for the sender and receiver.
+The **Mediator Pattern** is used to handle **complex communication** between objects. This way the data exchange is decoupled for the sender and receiver.
 
-In a previous project, I used this pattern to exchange data between objects in a one-to-many relationship. The problem occurred when I was trying to send the data manually to each recipient, but really quick I found that this problem needed a more abstract way in order to exchange the data in a proper way.
+In a previous project, I used this pattern to **exchange data** between objects in a **one-to-many relationship**. The problem occurred when I was trying to send the data manually to each recipient, but really quick I found that this problem needed a more abstract way in order to exchange the data in a proper way.
 
 Check out the following classes:
 
@@ -37,7 +37,7 @@ public class Employee...
 }
 ```
 
-I would like the share the list of names (Paul & Jacob) so only if the names occur in the list, the ```Employee``` object is created. I could expand the ```IFactory<Employee>``` interface with a sort of ```Invoke()``` method.
+I would like the **share the list** of names (Paul & Jacob) so only if the names occur in the list, the ```Employee``` object is created. I could expand the ```IFactory<Employee>``` interface with a sort of ```Invoke()``` method.
 
 ```cs
 // Client Start Class
@@ -71,9 +71,9 @@ public class EmployeeFactory : IFactory<Employee>...
 }
 ```
 
-But I hope that you understand that this isn't the right way to solve this problem. I know, I could create a generic interface ```IInvoke<>``` so the ```object``` would be determined at run-time, but then I still make the Factory responsible for receiving data used inside the factory.
+But I hope that you understand that this isn't the right way to solve this problem. I know, I could create a **generic interface** ```IInvoke<>``` so the ```object``` would be determined at run-time, but then I still make the Factory responsible for receiving data used inside the factory.
 
-The Factory should be responsible to create objects. That should be the ONLY responsibility. The receive functionality should be removed. But how?
+**The Factory should be responsible to create objects. That should be the ONLY responsibility.** The receive functionality should be removed. But how?
 
 The Mediator Pattern.
 
@@ -122,7 +122,7 @@ public class EmployeeFactory : IFactory<Employee>...
 
 In this example, the power of the Mediator Pattern isn't maybe that big. But imagine that you have multiple Factories, Mappers, Respositories, Services... that all need a State. It would take enormously lot of work to maintain all those interfaces (factories, mappers, respositories, services...) to share the right state (all with ```Invoke()``` methods).
 
-The Mediator Pattern allows you to share this state over multiple items: all who needs the state just takes the dependency of the Mediator with the right kind of state:
+**The Mediator Pattern allows you to share this state over multiple items:** all who needs the state just takes the dependency of the Mediator with the right kind of state:
 
 ```cs
 public class EmployeeFactory : IFactory<Employee>...
@@ -135,6 +135,6 @@ public class EmployeeFactory : IFactory<Employee>...
 }
 ```
 
-This way sharing data across objects isn't that hard anymore. An extra modifictation could be validation logic inside the Mediator to determine of the Mediator contains a valid state.
+This way sharing data across objects isn't that hard anymore. An extra modifictation could be **validation** logic inside the Mediator to determine of the Mediator contains a valid state.
 
 Thank you, Mediator!
